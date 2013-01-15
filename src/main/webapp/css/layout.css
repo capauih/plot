@@ -5,14 +5,22 @@ body {
   max-width: 800px;
 }
 
-.thumbnails > div{
-	float:left;
+.thumbnails{
+	width: 664px;	
+}
+
+.thumbnail {
+	padding-right:20px;
+	float: left;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+.little_plot{
 	width:166px;
 	height:100px;
 }
 
-.thumbnail {
-	float:left;
-	width:166px;
-	height:100px;
+#form {
+	clear: left;
 }
