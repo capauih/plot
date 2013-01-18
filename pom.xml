@@ -26,8 +26,8 @@
 				<configuration>
 					<stopPort>9966</stopPort>
 					<stopKey>foo</stopKey>
-                    <contextPath>/</contextPath>                     
-                </configuration>
+					<contextPath>/</contextPath>
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -42,7 +42,11 @@
 			<artifactId>junit</artifactId>
 			<version>4.10</version>
 			<scope>test</scope>
-
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.9</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>

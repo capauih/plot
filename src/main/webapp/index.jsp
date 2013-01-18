@@ -13,12 +13,13 @@
 	</head>
 	<body>
 		<h1>Flot Examples</h1>
+		<input id="saveDataButton" name="button" value="button" type="button" />
 		<div id="pano">
 			<div id="placeholder" style="width: 668px; height: 316px;"></div>
 		</div>
 		<div class="thumbnails" style="width: 690px"></div>
 		
-		<form action="">
+		<form id="defaultValuesForm" action="">
 			<div id="form">
 				<br />		
 				<h3>Enter a data:</h3>
@@ -45,6 +46,7 @@
 				
 			</div>
 		</form>
+		<form id="saveDataForm" action="" method="post"></form>
 		
 		<script type="text/javascript">
 			$(function () { 	
@@ -228,13 +230,30 @@
 					}).appendTo("body").fadeIn(200);
 				}
 
-				$('form').bind('submit',onSubmit);
+				
+				
 				
 				drowThumbnails();
+				
+				$('#defaultValuesForm').bind('submit',onSubmit);
+				$('#saveDataButton').bind('click', function(e){
+					//e.preventDefault();
+					var min = plot.getXAxes()[0].min;
+					var max = plot.getXAxes()[0].max;
+					var label = currentPlot.getData(min,max)[0].label||'ads';
+					var data = currentPlot.getData(min,max)[0].data.toString()||'0,0';
+
+					
+					$('#saveDataForm').append('<input type="hidden" name="lable" value="'+label+'" >');
+					$('#saveDataForm').append('<input type="hidden" name="data" value="'+data+'" >');
+					$('#saveDataForm').attr('action','/getData');
+					$('#saveDataForm').submit();
+					return false;
+				});
 
 				$('.thumbnail :first').trigger('click')
-		
 			});
 			</script>
+			
 	</body>
 </html>

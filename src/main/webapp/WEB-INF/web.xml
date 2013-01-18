@@ -5,4 +5,14 @@
   version="2.5">
   <display-name>Plot</display-name>
   
+  <servlet>
+  	<servlet-name>Excel</servlet-name>
+  	<servlet-class>by.bsu.rfe.nosova.web.Excel</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>Excel</servlet-name>
+  	<url-pattern>/getData</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
