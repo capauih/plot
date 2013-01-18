@@ -20,8 +20,8 @@ public class Excel extends HttpServlet {
 		List<String> headers = new ArrayList<String>();
 		List<Double[]> data = new ArrayList<Double[]>();
 
-		headers.add(req.getParameter("lable"));
 		headers.add("x");
+		headers.add(req.getParameter("lable"));
 		
 		String dataString = req.getParameter("data");
 		String[] dataArrayString = dataString.split(",");
@@ -33,7 +33,7 @@ public class Excel extends HttpServlet {
 		
 		int index = 0;
 		for(int i=2; i<dataArrayDouble.length; i+=2){
-			data.add(Arrays.copyOfRange(dataArrayDouble, 0, 2));
+			data.add(Arrays.copyOfRange(dataArrayDouble, index, i));
 			index = i;
 		}
 		
