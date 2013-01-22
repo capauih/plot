@@ -11,7 +11,6 @@ body {
 
 .thumbnail {
 	padding-right:20px;
-	float: left;
 	margin-top: 10px;
 	margin-left: 10px;
 	border: 1px dotted ;
@@ -24,7 +23,49 @@ body {
 	height:100px;
 }
 
+.validation_box{
+	width: 24px;
+	height: 24px;
+	float:left;
+	background-image: none;
+}
+
+.valid{
+	border:1px green solid;
+	padding: 3px;
+}
+
+.unvalid{
+	border:1px red solid;
+	padding: 3px;
+}
+
+.input_field_cell{
+	float:left;
+	width: 200px;
+	height: 24px;
+	margin-right: 5px;
+	display: block;
+}
+
+div.input_field_cell > input{
+	display: block;
+	height: 100%;
+	width: 100%;
+}
+
+.input_field_row{
+	height:24px;
+	width: auto;
+	clear: both;
+	margin-bottom: 10px;
+}
+
 #form {
+	clear: left;
+}
+
+.save_button{
 	clear: left;
 }
 
