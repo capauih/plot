@@ -22,6 +22,7 @@
 			<div class="save_button">
 				<input id="saveDataButton" name="button" value="Save Data!" type="button" />
 				<input id="newDataButton" name="button" value="Specify New Data!" type="button" />
+				<input id="informationButton" name="button" value="Information!" type="button" />
 				
 			</div> 
 		</div>
@@ -456,7 +457,27 @@
 			        	return value;
 					}}));
 				}
-				/*
+
+				function showInfo(){
+					$('<div id="inform"></div>').css( {
+						position: 'absolute',
+						display: 'none',
+						top: 20,
+						right: 20,
+						border: '1px solid #fdd',
+						padding: '2px',
+						backgroundImage: 'url("/img/info.gif")',
+						width: '501px',
+						height: '228px'
+						/*добавляем контейнер с сообщением на страницу и показываем его пользователю за 200 милисекунд*/
+					}).appendTo("body").fadeIn(200);
+				}
+
+				function hideInfo(){
+					$('#inform').remove();
+				}
+			
+					/*
 					вешаем обработчик на нажатие кнопки на форме с данными. 
 					Передаем в обработчик callback который должен выполнить обработчик в случае правильности ввода всех данных
 				*/
@@ -503,6 +524,8 @@
 					/*показываем форму для заполнения данных*/
 					$('#form').show();
 				})
+				
+				$('#informationButton').toggle(showInfo, hideInfo);
 
 				
 			});
