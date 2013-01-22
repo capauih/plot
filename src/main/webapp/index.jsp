@@ -451,7 +451,7 @@
 						var value = dE/(k*Math.log(x/R));
 			        	return value;
 					}}));
-					plotArray.push(new $.PlotModel({'label': 'T(R)', 'numberOfPoints': 1000, 'maxValue': Rmax, 'minValue': Rmin, 'method': function(x){
+					plotArray.push(new $.PlotModel({'label': 'T(R)', 'numberOfPoints': 100, 'maxValue': Rmax, 'minValue': Rmin, 'method': function(x){
 						var value = dE/(k*Math.log(A/x));
 			        	return value;
 					}}));
